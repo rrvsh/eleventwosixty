@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    android:paddingStart="60dp"
+    android:paddingTop="40dp"
+    android:paddingEnd="60dp"
+    android:paddingBottom="48dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/settings_button"
+            style="@style/UtilityButton"
+            android:nextFocusDown="@id/app_grid"
+            android:text="@string/settings" />
+
+        <Button
+            android:id="@+id/stock_home_button"
+            style="@style/UtilityButton"
+            android:nextFocusDown="@id/app_grid"
+            android:text="@string/stock_home" />
+
+        <Button
+            android:id="@+id/diagnostics_button"
+            style="@style/UtilityButton"
+            android:layout_marginEnd="0dp"
+            android:nextFocusDown="@id/app_grid"
+            android:text="@string/diagnostics" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/status_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:minHeight="44dp"
+        android:textColor="@color/text_secondary"
+        android:textSize="17sp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/launcher_title"
+            android:textColor="@color/text_primary"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/app_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_secondary"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <GridView
+        android:id="@+id/app_grid"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:columnWidth="220dp"
+        android:focusable="true"
+        android:gravity="fill"
+        android:horizontalSpacing="14dp"
+        android:drawSelectorOnTop="true"
+        android:listSelector="@drawable/grid_selector"
+        android:nextFocusUp="@id/settings_button"
+        android:numColumns="5"
+        android:scrollbars="vertical"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="10dp" />
+
+</LinearLayout>
